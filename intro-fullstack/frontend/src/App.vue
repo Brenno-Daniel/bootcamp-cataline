@@ -17,7 +17,7 @@
           <li v-for="user in users" :key="user.id">
             <p>{{ user.name }}</p>
             <small>{{ user.email }}</small>
-            <a class="destroy"></a>
+            <a class="destroy" @click="destroyUser(user.id)"></a>
           </li>
         </ul>
       </section>
@@ -27,13 +27,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import axios from './utils/axios'
-
-interface User {
-  id: string
-  email: string
-  name: string
-}
+import axios from '@/utils/axios'
+import { User } from '@/models'
 
 export default defineComponent({
   data() {
@@ -49,7 +44,7 @@ export default defineComponent({
     this.fetchUsers()
   },
   methods: {
-    // método listando usuários
+    // método listar usuário
     async fetchUsers() {
       try {
         const { data } = await axios.get('/users')
@@ -58,7 +53,7 @@ export default defineComponent({
         console.warn(error)
       }
     },
-    // método criando usuários
+    // método criar usuário
     async createUser() {
       try {
         const { data } = await axios.post('/users', this.form)
@@ -67,6 +62,20 @@ export default defineComponent({
 
         this.form.name = ''
         this.form.email = ''
+      } catch (error) {
+        console.warn(error)
+      }
+    },
+    // método excluir usuário pelo id
+    async destroyUser(id: User['id']) {
+      try {
+        await axios.delete(`/users/${id}`)
+
+        // lógica para encontrar o usuário que foi passado pelo parâmetro id
+        const userIndex = this.users.findIndex((user) => user.id === id)
+
+        // excluir o usuário encontrado pelo index acima
+        this.users.splice(userIndex, 1)
       } catch (error) {
         console.warn(error)
       }
