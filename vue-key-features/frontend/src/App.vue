@@ -1,5 +1,17 @@
 <template>
-  <h1>Hellooooo</h1>
+  <div>
+    <!-- diretiva v-bind (mais usada somente com o :) -->
+    <a :href="product.url" :class="productClass">
+      {{ product.name }}
+    </a>
+
+    <!-- v-text -->
+    <!-- com interpolação conseguimos misturar o que vem la do Javascript com o HTML -->
+    <p>{{ company }} é uma empresa legal</p>
+    <!-- com o v-text o dado que escolhemos fazer a interpolação sobrescreve o conteúdo da tag -->
+    <p v-text="company"></p>
+    <!-- <p v-text="company"> é uma empresa legal</p> -->
+  </div>
 </template>
 
 <script lang="ts">
@@ -8,31 +20,30 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
-      message: 'Hello Cataline'
+      product: {
+        name: 'Camisa',
+        url: 'http://loja.com/product/123456',
+        stock: false
+      },
+      company: 'Cataline'
     }
   },
-  // utilizamos o beforeCreated quando precisamos fazer alguma coisa o mais cedo possível, mas que não tenha contato com o seu próprio componente (em relação aos dados e a própria DOM).
-  beforeCreate() {
-    console.log('Antes da criação!')
-    console.log(this.message)
-  },
-  created() {
-    console.log('Depois da criação!')
-    console.log(this.message)
-  },
-  // Um gancho sempre tem acesso a tudo que o gancho anterior tinha.
-  // Antes da montagem ele não tem acesso à DOM, ou seja, o gancho beforeMounted não tem acesso à DOM.
-  beforeMount() {
-    console.log('Antes da montagem')
-    console.log(this.message)
-    console.log(this.$el) // beforeMounted não tem acesso ao elemento na DOM
-  },
-  // Depois da montagem do componente ele tem acesso à DOM, mounted tem acesso à DOM.
-  mounted() {
-    console.log('Depois da montagem')
-    console.log(this.message)
-    console.log(this.$el) // mounted tem acesso ao elemento na DOM
-    this.$el.style.background = 'red' // qualquer alteração na DOM deve ser realizado após o gancho mounted
+  computed: {
+    productClass(): string {
+      return this.product.stock ? 'sucess' : 'danger'
+    }
   }
 })
 </script>
+
+<style scoped>
+.sucess {
+  background-color: green;
+  color: white;
+}
+
+.danger {
+  background-color: red;
+  color: white;
+}
+</style>
