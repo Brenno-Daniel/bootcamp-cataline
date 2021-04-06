@@ -1,13 +1,12 @@
 <template>
   <!-- Execício básico utilizando as propriedades do vue:
  Data | Computed | Methods | Watch -->
- <div>
-  <p v-for="todo in doneTodos" :key="todo.text">
-    {{ todo.text }}
-  </p>
-
-  <button @click="checkAllTodos">Finalizar</button>
- </div>
+  <div>
+    <p v-for="todo in doneTodos" :key="todo.text">
+      {{ todo.text }}
+    </p>
+    <button @click="checkAllTodos">Finalizar</button>
+  </div>
 </template>
 
 <script lang="ts">
