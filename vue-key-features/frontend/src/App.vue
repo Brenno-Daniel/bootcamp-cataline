@@ -31,12 +31,12 @@
     <div>
       <h3>Diretiva v-on</h3>
       <a href="#interno" @click.once.prevent="something">Link interno</a>
-      <br>
-      <input type="text" @keyup.once="pressedAnyKey"/>
-      <br>
-      <input type="text" @keyup.enter="pressedEnterKey"/>
-      <br>
-      <input type="text" @keyup.k="pressedKKey"/>
+      <br />
+      <input type="text" @keyup.once="pressedAnyKey" />
+      <br />
+      <input type="text" @keyup.enter="pressedEnterKey" />
+      <br />
+      <input type="text" @keyup.k="pressedKKey" />
     </div>
     <!-- v-on -->
 
@@ -75,7 +75,6 @@
       </ul>
     </div>
     <!-- v-for -->
-
   </div>
 </template>
 
