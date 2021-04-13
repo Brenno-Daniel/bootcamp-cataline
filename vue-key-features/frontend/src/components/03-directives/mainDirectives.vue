@@ -141,7 +141,8 @@ export default defineComponent({
             ],
             name: '',
             age: 0,
-            message: false,
+            message: '',
+            newsletter: false,
             color: '',
             fruit: '',
         };
