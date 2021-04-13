@@ -1,6 +1,5 @@
 <template>
-    <!-- Construindo diretiva personalizada -->
-    <h1 v-highlight:background.shadow="'blue'">Diretiva Personalizada</h1>
+    <div></div>
 </template>
 
 <script lang="ts">
