@@ -1,5 +1,8 @@
 <template>
-    <button class="button-styled">botão estilizado</button>
+    <button class="button-styled">
+        botão estilizado
+        <span>do BRENNO</span>
+    </button>
 </template>
 
 <script lang="ts">

@@ -11,4 +11,13 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.button-styled {
+    position: absolute;
+    top: 45%;
+}
+/* v-deep adiciona uma estilização profunda para um componente */
+::v-deep.button-styled span {
+    color: #000;
+}
+</style>
