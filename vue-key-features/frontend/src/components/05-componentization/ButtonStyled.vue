@@ -1,14 +1,45 @@
 <template>
-    <button class="button-styled">
+    <!-- <button class="button-styled">
         botão estilizado
         <span>do BRENNO</span>
+    </button> -->
+    <button :class="['button-styled', color]">
+        {{ text }}
+        {{ user.name }}
     </button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
-export default defineComponent({});
+type color = 'success' | 'danger' | 'primary';
+
+interface User {
+    id: number;
+    name: string;
+}
+
+export default defineComponent({
+    props: {
+        text: {
+            type: [String, Number],
+            // default: 'Valor Padrão', // valor padrão
+            required: true, // valor obrigatório
+        },
+        color: {
+            type: String,
+            default: 'primary',
+            validator: (value: color) => {
+                return ['success', 'danger', 'primary'].includes(value);
+            },
+        },
+        user: {
+            // é preciso tipar as propriedades desse user mesmo estando declaradas no data do App.vue
+            type: Object as PropType<User>,
+            required: true,
+        }
+    },
+});
 </script>
 <style scoped>
 .button-styled {
@@ -21,5 +52,17 @@ export default defineComponent({});
     display: block;
     margin-bottom: 1rem;
     background-color: #2d6cea;
+}
+
+.primary {
+    background-color: blue;
+}
+
+.success {
+    background-color: green;
+}
+
+.danger {
+    background-color: red;
 }
 </style>
