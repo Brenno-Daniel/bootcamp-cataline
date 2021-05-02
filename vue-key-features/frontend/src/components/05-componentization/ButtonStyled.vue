@@ -23,7 +23,7 @@ export default defineComponent({
     props: {
         text: {
             type: [String, Number],
-            // default: 'Valor Padrão', // valor padrão
+            // default: 'Valor Padrão',
             required: true, // valor obrigatório
         },
         color: {
@@ -37,7 +37,7 @@ export default defineComponent({
             // é preciso tipar as propriedades desse user mesmo estando declaradas no data do App.vue
             type: Object as PropType<User>,
             required: true,
-        }
+        },
     },
 });
 </script>
