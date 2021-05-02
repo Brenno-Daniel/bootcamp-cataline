@@ -1,5 +1,6 @@
 <template>
     <!-- Construindo diretiva personalizada -->
+    <!-- Arquivos de diretiva personalizada: src/directives/ -->
     <h1 v-highlight:background.shadow="'blue'">Diretiva Personalizada</h1>
 </template>
 
