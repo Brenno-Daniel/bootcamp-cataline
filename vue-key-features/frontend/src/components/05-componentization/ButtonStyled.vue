@@ -22,7 +22,7 @@ interface User {
 export default defineComponent({
     props: {
         text: {
-            type: [String, Number],
+            type: [String, Number], // Definir que a Prop receba mais de um tipo
             // default: 'Valor Padrão',
             required: true, // valor obrigatório
         },
