@@ -4,8 +4,11 @@
         <span>do BRENNO</span>
     </button> -->
     <button :class="['button-styled', color]">
+        <!-- conceito de slots nomeados -->
+        <slot name="before" />
         {{ text }}
         {{ user.name }}
+        <slot name="after" />
     </button>
 </template>
 
@@ -36,7 +39,7 @@ export default defineComponent({
         user: {
             // é preciso tipar as propriedades desse user mesmo estando declaradas no data do App.vue
             type: Object as PropType<User>,
-            required: true,
+            default: '',
         },
     },
 });
