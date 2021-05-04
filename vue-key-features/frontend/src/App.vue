@@ -1,7 +1,9 @@
 <template>
+    <!-- Trabalhando com Props e estilização de componentes filhos -->
     <ButtonStyled text="Cadastro" color="primary" :user="user" />
     <ButtonStyled text="Login" color="danger" :user="user" />
-    <ButtonStyled text="Facebook">
+    <!-- Trabalhando com Slots -->
+    <ButtonStyled text="Facebook" :user="user">
         <template v-slot:before>
             <i class="fab fa-facebook-square"></i>
         </template>
@@ -9,6 +11,7 @@
             <i class="fab fa-facebook"></i>
         </template>
     </ButtonStyled>
+    <ButtonStyled text="Botão" @evento="action($event)" :user="user" />
 </template>
 
 <script lang="ts">
@@ -24,6 +27,11 @@ export default defineComponent({
                 name: 'Brenno',
             },
         };
+    },
+    methods: {
+        action(event: string) {
+            console.log(event);
+        },
     },
 });
 </script>

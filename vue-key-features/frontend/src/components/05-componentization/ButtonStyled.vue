@@ -3,7 +3,7 @@
         botão estilizado
         <span>do BRENNO</span>
     </button> -->
-    <button :class="['button-styled', color]">
+    <button :class="['button-styled', color]" @click="$emit('evento', 'Dado do evento personalizado')">
         <!-- conceito de slots nomeados -->
         <slot name="before" />
         {{ text }}
