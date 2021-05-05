@@ -1,4 +1,5 @@
 <template>
+    <!-- Aula 5 - Componentização -->
     <!-- Trabalhando com Props e estilização de componentes filhos -->
     <h3>Trabalhando com Props e estilização de componentes filhos:</h3>
     <ButtonStyled text="Cadastro" color="primary" :user="user" />
@@ -31,6 +32,23 @@
     </ul>
     <component :is="currentView" />
     <!-- Trabalhando com Dynamic Componentes [Componentes Dinâmicos] -->
+    <hr />
+    <!-- Aula 5 - Componentização -->
+    <!-- ------//------------//------------//------------//------ -->
+    <!-- Aula 6 - Transições -->
+    <!-- Trabalhando com Transition -->
+    <h3>Trabalhando com Transition:</h3>
+    <button @click="show = !show">Toggle</button>
+
+    <transition name="fade-fast">
+        <h1 v-if="show">Cataline</h1>
+    </transition>
+
+    <transition name="fade-slow">
+        <h1 v-if="show">Cataline</h1>
+    </transition>
+    <!-- Trabalhando com Transition -->
+    <!-- Aula 6 - Transições -->
 </template>
 
 <script lang="ts">
@@ -50,6 +68,7 @@ export default defineComponent({
                 name: 'Brenno',
             },
             currentView: 'Home',
+            show: false,
         };
     },
     methods: {
@@ -69,5 +88,38 @@ export default defineComponent({
 /* v-deep adiciona uma estilização profunda para um componente */
 ::v-deep.button-styled span {
     color: #000;
+}
+
+/* 
+Aula 6 - Transições - Trabalhando com Transition:
+
+v-enter-from (de onde estar vindo)
+v-enter-active (como vai acontecer)
+v-enter-to (para onde está indo)
+
+v-leave-from (de onde estar vindo)
+v-leave-active (como vai acontecer)
+v-leave-to (para onde está indo)
+
+O nome inicial `v` depende do atributo `name`
+*/
+.fade-fast-enter-from,
+.fade-fast-leave-to {
+    opacity: 0;
+}
+
+.fade-fast-enter-active,
+.fade-fast-leave-active {
+    transition: opacity 0.5s;
+}
+
+.fade-slow-enter-from,
+.fade-slow-leave-to {
+    opacity: 0;
+}
+
+.fade-slow-enter-active,
+.fade-slow-leave-active {
+    transition: opacity 2s;
 }
 </style>
