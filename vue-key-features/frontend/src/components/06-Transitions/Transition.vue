@@ -99,7 +99,7 @@ O nome inicial `v` depende do atributo `name`
     transition: opacity 1s;
 }
 
-.entrada { 
+.entrada {
     background-color: green;
     transition: opacity 0.4s;
 }
