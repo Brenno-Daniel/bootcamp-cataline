@@ -7,6 +7,7 @@
         <li @click="currentView = 'Componentization'">Aula 5</li>
         <li @click="currentView = 'Transition'">Aula 6</li>
         <li @click="currentView = 'TransitionMode'">Aula 6 - Transition Mode</li>
+        <li @click="currentView = 'TransitionList'">Aula 6 - Transition List</li>
     </ul>
 
     <transition enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut" mode="out-in">
@@ -27,9 +28,10 @@ import Contact from '@/pages/Contact.vue';
 import Componentization from '@/components/05-componentization/Componentization.vue';
 import Transition from '@/components/06-Transitions/Transition.vue';
 import TransitionMode from '@/components/06-Transitions/TransitionMode.vue';
+import TransitionList from '@/components/06-Transitions/TransitionList.vue';
 
 export default defineComponent({
-    components: { Home, About, Contact, Componentization, Transition, TransitionMode },
+    components: { Home, About, Contact, Componentization, Transition, TransitionMode, TransitionList },
     data() {
         return {
             currentViewPage: 'Home',
