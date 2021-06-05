@@ -1,2 +1,2 @@
 # bootcamp-cataline
-Bootcamp Cataline
+Bootcamp Cataline com foco na Stack Vue + Node!
