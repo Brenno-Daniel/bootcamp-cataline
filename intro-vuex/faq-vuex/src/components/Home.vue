@@ -1,15 +1,15 @@
 <template>
-    <h1>Perguntas frequentes</h1>
-    <p>Escolha a categoria desejada</p>
+    <component :is="currentView">
+        <h1>Perguntas frequentes</h1>
+        <p>Escolha a categoria desejada</p>
 
-    <ul>
-        <li @click="currentView = 'Basecamp'">Basecamp</li>
-        <li @click="currentView = 'Bootcamp'">Bootcamp</li>
-        <li @click="currentView = 'Cataline'">Cataline</li>
-        <li @click="currentView = 'Parcerias'">Parcerias</li>
-    </ul>
-
-    <component :is="currentView" />
+        <ul>
+            <li @click="currentView = 'Basecamp'">Basecamp</li>
+            <li @click="currentView = 'Bootcamp'">Bootcamp</li>
+            <li @click="currentView = 'Cataline'">Cataline</li>
+            <li @click="currentView = 'Parcerias'">Parcerias</li>
+        </ul>
+    </component>
 </template>
 
 <script>
