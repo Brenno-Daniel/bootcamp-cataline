@@ -12,10 +12,38 @@
                     </div>
 
                     <ul class="navegation">
-                        <li class="navegation__item" @click="currentView = 'Basecamp'">Basecamp</li>
-                        <li class="navegation__item" @click="currentView = 'Bootcamp'">Bootcamp</li>
-                        <li class="navegation__item" @click="currentView = 'Cataline'">Cataline</li>
-                        <li class="navegation__item" @click="currentView = 'Parcerias'">Parcerias</li>
+                        <li class="navegation__item" @click="currentView = 'Basecamp'">
+                            <div class="div-img">
+                                <img src="@/assets/images/rocket.svg" width="20" height="20" alt="Rocket" />
+                            </div>
+                            <div class="span">
+                                <span>Basecamp</span>
+                            </div>
+                        </li>
+                        <li class="navegation__item" @click="currentView = 'Bootcamp'">
+                            <div class="div-img">
+                                <img src="@/assets/images/astronaut-helmet.svg" width="20" height="20" alt="Astronaut Helmet" />
+                            </div>
+                            <div class="span">
+                                <span>Bootcamp</span>
+                            </div>
+                        </li>
+                        <li class="navegation__item" @click="currentView = 'Cataline'">
+                            <div class="div-img">
+                                <img src="@/assets/images/student-hat.svg" width="20" height="20" alt="Student hat" />
+                            </div>
+                            <div class="span">
+                                <span>Cataline</span>
+                            </div>
+                        </li>
+                        <li class="navegation__item" @click="currentView = 'Parcerias'">
+                            <div class="div-img">
+                                <img src="@/assets/images/partnership.svg" width="20" height="20" alt="Partnership" />
+                            </div>
+                            <div class="span">
+                                <span>Parcerias</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -98,14 +126,28 @@ body {
     display: grid;
 }
 
-.navegation > li {
-    height: 53px;
-    padding: 0 0.2em;
+.navegation__item {
     line-height: 3em;
 }
 
 .navegation__item:hover {
     background: #3f4452;
     border-radius: 2px;
+}
+
+.navegation > li {
+    height: 53px;
+    padding: 0 0.2em;
+}
+
+.div-img {
+    width: 20%;
+    float: left;
+    line-height: 3.5em;
+}
+
+.span {
+    width: 80%;
+    float: right;
 }
 </style>
