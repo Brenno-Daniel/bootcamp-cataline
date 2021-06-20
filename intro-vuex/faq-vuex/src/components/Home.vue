@@ -2,50 +2,48 @@
     <component :is="currentView">
         <div class="container">
             <div class="faq-container">
-                <div class="faq-content">
-                    <div class="lost-astronaut">
-                        <img src="@/assets/images/astronaut.svg" alt="Astronaut" width="242" height="112" />
-                    </div>
-                    <div class="faq-title">
-                        <p>Perguntas frequentes</p>
-                        <span>Escolha a categoria desejada</span>
-                    </div>
-
-                    <ul class="navegation">
-                        <li class="navegation__item" @click="currentView = 'Basecamp'">
-                            <div class="div-img">
-                                <img src="@/assets/images/rocket.svg" width="20" height="20" alt="Rocket" />
-                            </div>
-                            <div class="span">
-                                <span>Basecamp</span>
-                            </div>
-                        </li>
-                        <li class="navegation__item" @click="currentView = 'Bootcamp'">
-                            <div class="div-img">
-                                <img src="@/assets/images/astronaut-helmet.svg" width="20" height="20" alt="Astronaut Helmet" />
-                            </div>
-                            <div class="span">
-                                <span>Bootcamp</span>
-                            </div>
-                        </li>
-                        <li class="navegation__item" @click="currentView = 'Cataline'">
-                            <div class="div-img">
-                                <img src="@/assets/images/student-hat.svg" width="20" height="20" alt="Student hat" />
-                            </div>
-                            <div class="span">
-                                <span>Cataline</span>
-                            </div>
-                        </li>
-                        <li class="navegation__item" @click="currentView = 'Parcerias'">
-                            <div class="div-img">
-                                <img src="@/assets/images/partnership.svg" width="20" height="20" alt="Partnership" />
-                            </div>
-                            <div class="span">
-                                <span>Parcerias</span>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="lost-astronaut">
+                    <img src="@/assets/images/astronaut.svg" alt="Astronaut" width="242" height="112" />
                 </div>
+                <div class="faq-title">
+                    <p>Perguntas frequentes</p>
+                    <span>Escolha a categoria desejada</span>
+                </div>
+
+                <ul class="navegation">
+                    <li class="navegation__item" @click="currentView = 'Basecamp'">
+                        <div class="div-img">
+                            <img src="@/assets/images/rocket.svg" width="20" height="20" alt="Rocket" />
+                        </div>
+                        <div class="span">
+                            <span>Basecamp</span>
+                        </div>
+                    </li>
+                    <li class="navegation__item" @click="currentView = 'Bootcamp'">
+                        <div class="div-img">
+                            <img src="@/assets/images/astronaut-helmet.svg" width="20" height="20" alt="Astronaut Helmet" />
+                        </div>
+                        <div class="span">
+                            <span>Bootcamp</span>
+                        </div>
+                    </li>
+                    <li class="navegation__item" @click="currentView = 'Cataline'">
+                        <div class="div-img">
+                            <img src="@/assets/images/student-hat.svg" width="20" height="20" alt="Student hat" />
+                        </div>
+                        <div class="span">
+                            <span>Cataline</span>
+                        </div>
+                    </li>
+                    <li class="navegation__item" @click="currentView = 'Parcerias'">
+                        <div class="div-img">
+                            <img src="@/assets/images/partnership.svg" width="20" height="20" alt="Partnership" />
+                        </div>
+                        <div class="span">
+                            <span>Parcerias</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </component>
@@ -71,24 +69,23 @@ export default {
     src: local('Lato-Bold'), url('../assets/fonts/Lato-Bold.ttf') format('ttf');
     src: local('Lato-Regular'), url('../assets/fonts/Lato-Regular.ttf') format('ttf');
 }
+
 body {
     height: 100vh;
     margin: 0;
 }
 
 .container {
+    width: 305px;
     height: 100%;
+    margin: auto;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 305px;
     grid-template-rows: auto;
     justify-content: center;
     align-content: center;
     color: #f5f6f8;
-}
-
-.faq-container {
-    width: 305px;
-    height: 457px;
     background: #26282c;
     border-radius: 5px;
 }
@@ -133,6 +130,7 @@ body {
 .navegation__item:hover {
     background: #3f4452;
     border-radius: 2px;
+    cursor: default;
 }
 
 .navegation > li {
