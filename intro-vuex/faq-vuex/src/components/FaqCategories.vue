@@ -80,7 +80,7 @@ p {
 .categories .category-item img {
     width: 1.5rem;
 }
-.categories .category-item img:hover {
+.categories .category-item:hover {
     background-color: #3f4452;
     cursor: pointer;
 }
