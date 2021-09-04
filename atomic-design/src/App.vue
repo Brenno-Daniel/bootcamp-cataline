@@ -1,14 +1,20 @@
 <template>
-  <div class="app"></div>
+  <div class="component">
+    <Logo />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { Logo } from '@/components/atoms';
 
-export default defineComponent({});
+export default defineComponent({
+  components: { Logo }
+});
 </script>
 
 <style lang="scss" scoped>
-.app {
+.component {
+  width: 300px;
 }
 </style>
