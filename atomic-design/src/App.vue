@@ -1,21 +1,15 @@
 <template>
   <div class="component">
-    <Container>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, ipsam
-        quaerat illum aspernatur sit quas distinctio iste enim, et vel amet modi
-        delectus in error, tenetur cum ut veritatis deserunt.
-      </p>
-    </Container>
+    <HomeTamplate />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Container } from '@/components/bosons';
+import { HomeTamplate } from '@/components/templates';
 
 export default defineComponent({
-  components: { Container },
+  components: { HomeTamplate },
 });
 </script>
 
