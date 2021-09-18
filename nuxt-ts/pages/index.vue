@@ -1,9 +1,7 @@
 <template>
-  <ul>
-    <NuxtLink to="/">Home</NuxtLink>
-    <NuxtLink to="/sobre">Sobre</NuxtLink>
-    <NuxtLink to="/cataline">cataline</NuxtLink>
-  </ul>
+  <div>
+    <h1>Home</h1>
+  </div>
 </template>
 
 <script lang="ts">
