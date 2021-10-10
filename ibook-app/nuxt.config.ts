@@ -22,7 +22,7 @@ export default {
   css: ['normalize.css/normalize.css', '@/assets/scss/base.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['@/plugins/accessor'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [{ path: '@/components', pathPrefix: false }],
@@ -39,6 +39,12 @@ export default {
   styleResources: {
     scss: ['@/components/bosons/*.scss'],
   },
+
+  axios: {
+    baseUrl:
+      process.env.NOV_ENV === 'production' ? '' : 'http://localhost:3333',
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
